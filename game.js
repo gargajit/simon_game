@@ -7,13 +7,17 @@ var started = false;
 var level = 0;
 
 
-$(document).on('keydown', function(){
+$(document).on('keydown', handleEvent);
+$(document).on('touchstart', handleEvent);
+
+function handleEvent(){
     if(!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     }
-});
+}
+
 
 
 $('.btn').click(function() {
@@ -28,6 +32,7 @@ $('.btn').click(function() {
 
 
 function nextSequence() {
+
     userClickedPattern = [];
 
     level ++;
@@ -37,40 +42,18 @@ function nextSequence() {
     var randomChosenColour = buttonColors[randomNumber];
     gamePattern.push(randomChosenColour);
     
-    console.log(gamePattern);
 
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);   
+    playSound(randomChosenColour);
+    
 }
 
 
 function playSound(color) {
-    switch(color) {
-        case 'green':
-            var green = new Audio('./sounds/green.mp3');
-            green.play();
-            break;
-
-        case 'red':
-            var red = new Audio('./sounds/red.mp3');
-            red.play();
-            break;
-
-        case 'yellow':
-            var yellow = new Audio("./sounds/yellow.mp3");
-            yellow.play();
-            break;
-        
-        case 'blue':
-            var blue = new Audio('./sounds/blue.mp3');
-            blue.play();
-            break;
-
-        default:
-            var wrong = new Audio('.sounds/wrong.mp3');
-            wrong.play();
-    }
+    var audio = new Audio('./sounds/' + color + '.mp3');
+    audio.play();
 }
+
 
 
 function animatePress(currentColour) {
@@ -108,5 +91,14 @@ function checkAnswer(currentLevel) {
         }, 200);
 
         $("#level-title").text("Game Over, Press Any Key to Restart");
+
+        startOver();
     }
+}
+
+
+function startOver() {
+    level = 0;
+    started = false;
+    gamePattern = [];
 }
