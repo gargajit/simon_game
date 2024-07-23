@@ -7,6 +7,14 @@ var started = false;
 var level = 0;
 
 
+$(".close").on('click', closePopup);
+$('.close').on('touchstart', closePopup);
+
+function closePopup() {
+    $(".popup").css("display", "none")
+}
+
+
 $(document).on('keydown', handleEvent);
 $(document).on('touchstart', handleEvent);
 
