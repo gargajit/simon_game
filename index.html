@@ -4,11 +4,23 @@
 <head>
   <meta charset="utf-8">
   <title>Simon</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_pop.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
+    <div class="popup">
+        <button class="close">&times;</button>
+        <h1>Game Rules</h1>
+        <ol>
+            <li>At every level the game highlights one button.</li>
+            <li>Repeat the previous pattern and add the current level color by pressing the buttons.</li>
+            <li>Game continues if you keep the pattern going.</li>
+            <li>If you fail to match the pattern, game ends.</li>
+            <li>You can restart, by pressing any key on keyboard or touch the screen on mobile.</li>
+            <p class="close">Good Luck!</p>
+        </ol>
+    </div>
   <h1 id="level-title">Press A Key to Start</h1>
   <div class="container">
     <div class="row">
@@ -36,7 +48,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="./game.js"></script>
+  <script src="./game_pop.js"></script>
 </body>
 
 </html>
