@@ -16,7 +16,6 @@ $(document).on('keydown', function(){
 });
 
 
-
 $('.btn').click(function() {
     var userChosenColour = this.id;
     userClickedPattern.push(userChosenColour);
@@ -29,7 +28,6 @@ $('.btn').click(function() {
 
 
 function nextSequence() {
-
     userClickedPattern = [];
 
     level ++;
@@ -42,8 +40,7 @@ function nextSequence() {
     console.log(gamePattern);
 
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
-    
+    playSound(randomChosenColour);   
 }
 
 
@@ -74,7 +71,6 @@ function playSound(color) {
             wrong.play();
     }
 }
-
 
 
 function animatePress(currentColour) {
