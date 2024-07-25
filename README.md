@@ -1,5 +1,6 @@
 # Simon Game
 It is a short-term memory game to follow the pattern with colors and sounds.
+
 You just need to Observe, Repeat and Continue to the levels you can reach.
 
 ## Game Rules
